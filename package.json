@@ -3,12 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --config webpack.config.js --mode production",
-    "watch": "webpack --config webpack.config.js --mode production --watch",
-    "build:renderer": "webpack --config renderer/webpack.config.js --mode production",
-    "watch:renderer": "webpack --config renderer/webpack.config.js --mode production --watch",
-    "deploy": "NODE_ENV=production sls deploy"
+    "serve": "serverless offline --httpPort 5000",
+    "build": "webpack --config renderer/webpack.config.js --mode production",
+    "watch": "webpack --config renderer/webpack.config.js --mode production --watch",
+    "deploy": "NODE_ENV=production serverless deploy"
   },
   "author": "",
   "dependencies": {
@@ -37,6 +35,7 @@
     "puppeteer": "^5.5.0",
     "sass": "^1.29.0",
     "sass-loader": "^10.1.0",
+    "serverless": "^2.16.1",
     "serverless-dotenv-plugin": "^3.1.0",
     "serverless-offline": "^6.8.0",
     "style-loader": "^1.2.1",

@@ -9,7 +9,7 @@ class VueComponentRenderer {
         const width = 1200;
         const height = 630;
 
-        await chromium.font(dir + '/fonts/ipaexm.ttf');
+        // await chromium.font(dir + '/fonts/ipaexm.ttf');
         const browser = await chromium.puppeteer.launch({
             args: chromium.args,
             executablePath: await chromium.executablePath,

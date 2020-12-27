@@ -4,6 +4,33 @@
 npm i -g serverless
 ```
 
+# Quick start
+
+```
+git clone
+cd 
+rm -rf .git 
+cp .env.example .env
+```
+
+```
+npm run serve
+```
+
+```
+curl -X POST -H "Authorization: 1234" -d "text=Hello World!" http://localhost:5000/prod/render 
+```
+
+## IMAGE_NAME format
+
+## Deploy
+
+If you want to change app name then run below command.
+
+```
+
+```
+
 # start dev server
 
 ```
@@ -13,7 +40,7 @@ serverless offline --httpPort 5000
 # test post
 
 ```
-curl -d "id=1234text=TestText" -H "Authorization: 1234" -X POST http://localhost:5000/prod/render
+curl -X POST -H "Authorization: 1234" -d "text=Hello World!" http://localhost:5000/prod/render
 ```
 
 ```
