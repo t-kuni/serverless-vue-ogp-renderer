@@ -1,0 +1,17 @@
+service: serverless-vue-ogp-renderer
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: prod
+  region: ap-northeast-1
+
+functions:
+  app:
+    handler: index.handler
+    events:
+      - http: POST /render
+
+plugins:
+  - serverless-offline
+  - serverless-dotenv-plugin
