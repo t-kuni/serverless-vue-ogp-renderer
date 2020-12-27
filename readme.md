@@ -1,6 +1,6 @@
 # Serverless Vue OGP Renderer
 
-This program is to rendering OGP image by headless chromium. You can design OGP image by Vue component. This program uses [Serverless framework] (https://www.serverless.com/), so it works over AWS Lambda, Rendering is triggered by POST request.
+This program is to rendering OGP image by headless chromium. You can design OGP image by Vue component. This program uses [Serverless framework](https://www.serverless.com/), so it works over AWS Lambda, Rendering is triggered by POST request.
 
 ## Quick start
 
