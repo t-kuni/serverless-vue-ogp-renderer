@@ -1,4 +1,5 @@
 const chromium = require('chrome-aws-lambda');
+const fs = require('fs');
 
 class VueComponentRenderer {
     constructor() {
@@ -9,7 +10,8 @@ class VueComponentRenderer {
         const width = 1200;
         const height = 630;
 
-        // await chromium.font(dir + '/fonts/ipaexm.ttf');
+        await this.loadFonts();
+
         const browser = await chromium.puppeteer.launch({
             args: chromium.args,
             executablePath: await chromium.executablePath,
@@ -41,6 +43,25 @@ class VueComponentRenderer {
     wait(ms) {
         return new Promise((resolve, reject) => {
             setTimeout(() => resolve(), ms);
+        })
+    }
+
+    async loadFonts() {
+        const dir = process.cwd();
+        const fontDir = dir + '/fonts';
+
+        const fontFileNames = fs.readdirSync(fontDir).filter((file) => {
+            return file.match(/\.ttf$/)
+        });
+
+        await Promise.all(fontFileNames.map((name) => {
+            return chromium.font(fontDir + '/' + name)
+        })).catch((e) => {
+            if (e.code === 'EEXIST' && e.syscall === 'symlink') {
+                // if already loaded font then ignore error.
+            } else {
+                throw e;
+            }
         })
     }
 }
