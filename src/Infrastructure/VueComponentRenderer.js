@@ -21,7 +21,7 @@ class VueComponentRenderer {
             }
         });
         const page = await browser.newPage();
-        await page.goto('file://' + dir + '/renderer/dist/renderer.html', {waitUntil: 'networkidle2'});
+        await page.goto('file://' + dir + '/renderer/dest/renderer.html', {waitUntil: 'networkidle2'});
         await page.evaluate((body) => {
             window.vue.$body = body;
         }, reqBody);

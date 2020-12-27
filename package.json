@@ -24,7 +24,7 @@
     "aws-sdk": "^2.741.0",
     "babel-loader": "^8.1.0",
     "cache-loader": "^4.1.0",
-    "copy-webpack-plugin": "^6.0.3",
+    "copy-webpack-plugin": "^6.4.1",
     "css-loader": "^4.2.2",
     "deepmerge": "^4.2.2",
     "fibers": "^5.0.0",

@@ -32,9 +32,9 @@ You can confirm the generated image at `/storage` directory.
 
 You can customize OGP image by edit `rederer/src/renderer.vue`.
 
-Build vue component after edit.
-
-You can confirm design easily by open the `renderer/dist/renderer.html` by browser.
+```
+npm run build
+```
 
 ## Image name format
 

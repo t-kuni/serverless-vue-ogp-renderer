@@ -7,6 +7,11 @@ class LocalRepository {
     async save(path, name) {
         const outPath = __dirname + '/../../../storage/' + name;
         fs.renameSync(path, outPath);
+        return {
+            Bucket: '/storage',
+            Key: name,
+            ContentType: 'image/png'
+        }
     }
 }
 

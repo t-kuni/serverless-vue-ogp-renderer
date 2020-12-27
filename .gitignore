@@ -1,6 +1,6 @@
 .idea
 node_modules
-/dist
+/renderer/dest/renderer.js
 releases
 /temp
 .env
@@ -8,4 +8,3 @@ releases
 !.env.example
 .serverless
 /storage/*
-/renderer/dist

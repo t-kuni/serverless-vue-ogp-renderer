@@ -1,5 +1,6 @@
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const path = require('path');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     target : 'web',
@@ -7,7 +8,7 @@ module.exports = {
         renderer: './renderer/src/renderer.js',
     },
     output : {
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, 'dest'),
     },
     module : {
         rules: [
@@ -43,10 +44,16 @@ module.exports = {
     resolve: {
         extensions: ['.vue', '.js'],
         alias     : {
-            'vue$': 'vue/dist/vue.esm.js'
+            'vue$': 'vue/dest/vue.esm.js'
         }
     },
     plugins: [
         new VueLoaderPlugin(),
+        new CopyPlugin({
+            patterns: [
+                { from: "renderer/src/renderer.html" },
+                { from: "renderer/src/img", to: "img" },
+            ],
+        }),
     ]
 };
