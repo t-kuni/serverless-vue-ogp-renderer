@@ -8,3 +8,4 @@ releases
 !.env.example
 .serverless
 /storage/*
+!/storage/.gitkeep
